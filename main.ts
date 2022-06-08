@@ -1,3 +1,6 @@
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
+    game.over(true, effects.starField)
+})
 let mySprite = sprites.create(img`
     . . . . . f f f f f . . . . . . 
     . . . . f e e e e e f . . . . . 
@@ -141,3 +144,5 @@ scene.setBackgroundImage(img`
     `)
 tiles.setCurrentTilemap(tilemap`level1`)
 scene.cameraFollowSprite(mySprite)
+tiles.placeOnRandomTile(mySprite, assets.tile`transparency16`)
+info.startCountdown(20)
